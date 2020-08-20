@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">HW222AndroidEpikhun</string>
+   <string name="app_name_1">APPBAR</string>
     <string name="btnSaveNote">СОХРАНИТЬ</string>
+
+    <string name="action_open_notes">ЗАПИСНАЯ КНИЖКА</string>
+
+    <string name="action_open_addrbook">АДРЕСНАЯ КНИЖКА</string>
+
 </resources>

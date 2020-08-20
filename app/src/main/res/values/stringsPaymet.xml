@@ -1,0 +1,13 @@
+<resources>
+
+    // <string name="app_name_2">Payment Method</string>
+
+    <string name="inputMoney">Ввод денег</string>
+    <string name="inputInfo">Информация об оплате</string>
+    <string name="cashAddressChkBx">Наличными по адресу</string>
+    <string name="mobilePhoneChkBx">С мобильного телефона</string>
+    <string name="bankCardChkBx">С банковской карты</string>
+    <string name="btnOK">ОК</string>
+    <string name="action_open_paymet">ОПЛАТА</string>
+
+</resources>

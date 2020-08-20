@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         int id = item.getItemId();
 
+        /*
+
         if (id == R.id.action_open_notes) {
             Toast.makeText(MainActivity.this, "Отркыть записную книжку", Toast.LENGTH_LONG).show();
 
@@ -44,6 +46,30 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentNotes);
 
             return true;
+        }
+
+        */
+        switch (id) {
+
+            case R.id.action_open_notes:
+                Toast.makeText(MainActivity.this, "Отркыть записную книжку", Toast.LENGTH_LONG).show();
+
+                Intent intentNotes = new Intent(MainActivity.this, NotesActivity.class);
+                startActivity(intentNotes);
+                break;
+            case R.id.action_open_paymet:
+                Toast.makeText(MainActivity.this, "Отркыть ОПЛАТА", Toast.LENGTH_LONG).show();
+
+                 intentNotes = new Intent(MainActivity.this, PayMetActivity.class);
+                startActivity(intentNotes);
+                break;
+
+            case R.id.action_open_addrbook:
+                Toast.makeText(MainActivity.this, "Отркыть АДРЕСНУЮ книжку", Toast.LENGTH_LONG).show();
+
+                 intentNotes = new Intent(MainActivity.this, PayMetActivity.class);
+                startActivity(intentNotes);
+                break;
         }
 
         return super.onOptionsItemSelected(item);

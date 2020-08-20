@@ -14,6 +14,16 @@
     <item
         android:id="@+id/action_open_notes"
         android:orderInCategory="101"
-        android:title="Записная книжка"
+        android:title="@string/action_open_notes"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_open_paymet"
+        android:orderInCategory="102"
+        android:title="@string/action_open_paymet" />
+    <item
+        android:id="@+id/action_open_addrbook"
+        android:orderInCategory="103"
+        android:title="@string/action_open_addrbook" />
+
+
 </menu>
