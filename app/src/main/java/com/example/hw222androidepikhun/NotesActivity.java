@@ -9,14 +9,25 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-//import android.support.v7.app.AppCompatActivity;
+
 
 public class NotesActivity extends AppCompatActivity {
-    private EditText mInputNote;
+
+
+    public final class Cons {
+        private static final String NOTE_TEXT = "note_text";
+        private static final String myNoteSharName = "MyNote";
+
+        private Cons() {
+        }
+    }
+
+    private  EditText mInputNote;
     private Button mBtnSaveNote;
 
     private SharedPreferences myNoteSharedPref;
-    private static String NOTE_TEXT = "note_text";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +41,24 @@ public class NotesActivity extends AppCompatActivity {
         mInputNote = findViewById(R.id.inputNote);
         mBtnSaveNote = findViewById(R.id.btnSaveNote);
 
-        myNoteSharedPref = getSharedPreferences("MyNote", MODE_PRIVATE);
+
+        myNoteSharedPref = getSharedPreferences(Cons.myNoteSharName, MODE_PRIVATE);
 
         mBtnSaveNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences.Editor myEditor = myNoteSharedPref.edit();
                 String noteTxt = mInputNote.getText().toString();
-                myEditor.putString(NOTE_TEXT, noteTxt);
+                myEditor.putString(Cons.NOTE_TEXT, noteTxt);
                 myEditor.apply();
-                Toast.makeText(NotesActivity.this, "данные сохранены", Toast.LENGTH_LONG).show();
+                String mystrdatasave = getString(R.string.datasave);
+                Toast.makeText(NotesActivity.this, mystrdatasave, Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private  void getDateFromSharedPref(){
-        String noteTxt = myNoteSharedPref.getString(NOTE_TEXT, "");
+        String noteTxt = myNoteSharedPref.getString(Cons.NOTE_TEXT, "");
         mInputNote.setText(noteTxt);
     }
 
